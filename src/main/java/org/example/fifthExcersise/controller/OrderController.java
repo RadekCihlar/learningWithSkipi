@@ -1,7 +1,6 @@
 package org.example.fifthExcersise.controller;
 
 import org.example.fifthExcersise.model.Order;
-import org.example.fifthExcersise.model.Product;
 import org.example.fifthExcersise.service.OrderService;
 import org.example.fifthExcersise.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
+
 
 @RestController
 public class OrderController {
@@ -42,6 +41,11 @@ public class OrderController {
 
         orderService.saveOrder(order);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/orders/hi")
+    public ResponseEntity<String> orderHi(){
+        return new ResponseEntity<>("Logged in týpek!", HttpStatus.OK);
     }
 
 }
